@@ -1,9 +1,6 @@
-name: Build Debug
+name: Build Release
 
-on: 
-  push:
-    branches:
-    - !master
+on: [push]
 
 jobs:
   build:
@@ -22,6 +19,4 @@ jobs:
       - name: Install dependencies
         run: dotnet restore
       - name: Build
-        run: dotnet build --configuration Debug --no-restore
-      - name: Test
-        run: dotnet test --no-restore --verbosity normal
+        run: dotnet build --configuration Release --no-restore
